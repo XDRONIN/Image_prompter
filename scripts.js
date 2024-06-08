@@ -41,6 +41,19 @@ genButton.addEventListener("click", () => {
   run();
 });
 
+const imgPreview = document.getElementById("imagePreview");
+fileInputEl.addEventListener("change", () => {
+  const file = fileInputEl.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      imgPreview.src = e.target.result;
+      imgPreview.style.display = "block";
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
 function addLineBreaks(text) {
   // Replace '#' and '*' with empty string
   const processedText = text.replace(/[#*]/g, "");
