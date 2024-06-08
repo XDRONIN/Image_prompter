@@ -31,10 +31,29 @@ async function run() {
   const result = await model.generateContent([prompt, ...imageParts]);
   const response = await result.response;
   const text = response.text();
-  console.log(text);
+  const newText = addLineBreaks(text);
+  resultText.innerHTML = `${newText}`;
 }
+const resultText = document.querySelector(".output");
 const fileInputEl = document.querySelector("input[type=file]");
 const genButton = document.querySelector("#butt");
 genButton.addEventListener("click", () => {
   run();
 });
+
+function addLineBreaks(text) {
+  // Replace '#' and '*' with empty string
+  const processedText = text.replace(/[#*]/g, "");
+
+  // Split the processed text into an array of lines
+  const lines = processedText.split(/\n/);
+  let formattedText = "";
+
+  // Iterate through each line
+  lines.forEach((line) => {
+    // Add line break before '#' or '*'
+    formattedText += line.replace(/(#|\*)/g, "<br>$1") + "<br>";
+  });
+
+  return formattedText;
+}
