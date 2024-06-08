@@ -22,7 +22,7 @@ async function run() {
   // The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-  const prompt = "What do you see in the Picture?";
+  const prompt = document.getElementById("prompt").value;
 
   const imageParts = await Promise.all(
     [...fileInputEl.files].map(fileToGenerativePart)
@@ -34,6 +34,7 @@ async function run() {
   console.log(text);
 }
 const fileInputEl = document.querySelector("input[type=file]");
-fileInputEl.addEventListener("change", (event) => {
+const genButton = document.querySelector("#butt");
+genButton.addEventListener("click", () => {
   run();
 });

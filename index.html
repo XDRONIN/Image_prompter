@@ -1,13 +1,24 @@
 <html>
+  <link rel="stylesheet" href="styles.css" />
+  <head>
+    <title>Image Prompter</title>
+  </head>
   <body>
     <!-- ... Your HTML and CSS -->
-    <input type="file" id="fileInput" accept="image/*" />
-    <img
-      id="imagePreview"
-      src=""
-      alt="Image Preview"
-      style="display: none; width: 300px; height: auto"
-    />
+    <div class="input">
+      <input type="file" id="fileInput" accept="image/*" />
+      <img
+        id="imagePreview"
+        src=""
+        alt="Image Preview"
+        style="display: none; width: 300px; height: auto"
+      />
+      <label for="prompt">Prompt :</label>
+      <input type="text" id="prompt" name="prompt" />
+      <div class="buttoncontainer">
+        <button id="butt">
+          Generate</button>
+    </div>
     <script type="importmap">
       {
         "imports": {
