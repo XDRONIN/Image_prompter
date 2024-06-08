@@ -1,0 +1,20 @@
+<html>
+  <body>
+    <!-- ... Your HTML and CSS -->
+    <input type="file" id="fileInput" accept="image/*" />
+    <img
+      id="imagePreview"
+      src=""
+      alt="Image Preview"
+      style="display: none; width: 300px; height: auto"
+    />
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+      }
+    </script>
+    <script type="module" src="scripts.js"></script>
+  </body>
+</html>
