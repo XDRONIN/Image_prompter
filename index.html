@@ -5,6 +5,9 @@
   </head>
   <body>
     <!-- ... Your HTML and CSS -->
+    <div class="header">
+      <h1 class="myh1">Image Prompter</h1>
+    </div>
     <div class="input">
       <input type="file" id="fileInput" accept="image/*" />
       <img
@@ -15,11 +18,11 @@
       />
       <label for="prompt">Prompt :</label>
       <input type="text" id="prompt" name="prompt" />
-      <div class="buttoncontainer">
-        <button id="butt">
-          Generate</button>
     </div>
-    
+    <div class="buttoncontainer">
+      <button id="butt" class="button">Generate</button>
+    </div>
+
     <div class="output"></div>
     <script type="importmap">
       {
