@@ -11,9 +11,12 @@ body {
 .header {
   display: flex;
   justify-content: center;
-  margin: 0%;
-  background-color: #183d3d;
-  color: #95b2a7;
+  align-items: center;
+
+  background-color: #95b2a7;
+  color: #183d3d;
+  border: solid;
+  border-color: #183d3d;
   height: 90px;
 }
 .myh1 {
@@ -122,4 +125,25 @@ input[type="file"]::-webkit-file-upload-button:hover {
 .button:active::after {
   transition: 0s;
   transform: translate(0, 5%);
+}
+label {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#prompt {
+  font-family: "SF Pro";
+  max-width: 190px;
+  padding: 0.875rem;
+  font-size: 1rem;
+  border: 1.5px solid #183d3d;
+  border-radius: 0.5rem;
+  box-shadow: 2.5px 3px 0 #183d3d;
+  outline: none;
+  transition: ease 0.25s;
+  font-family: "newFont";
+  color: #183d3d;
+  font-size: larger;
+}
+#prompt:focus {
+  box-shadow: 5.5px 7px 0 #183d3d;
 }
