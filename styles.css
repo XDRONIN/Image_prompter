@@ -4,8 +4,8 @@
 }
 body {
   font-family: "newFont";
-  background-color: #95b2a7;
-  color: #183d3d;
+  background-color: #f3ca52;
+  color: #0a6847;
   margin: 0;
 }
 .header {
@@ -13,10 +13,10 @@ body {
   justify-content: center;
   align-items: center;
 
-  background-color: #95b2a7;
-  color: #183d3d;
+  background-color: #f3ca52;
+  color: #0a6847;
   border: solid;
-  border-color: #183d3d;
+  border-color: #0a6847;
   height: 90px;
 }
 .myh1 {
@@ -34,9 +34,10 @@ body {
   font-size: 30px;
   margin-top: 50px;
   text-align: justify;
-  color: #183d3d;
+  color: #0a6847;
   padding: 3%;
   line-height: 38px;
+  justify-content: center;
 }
 
 input[type="file"]::-webkit-file-upload-button {
@@ -49,13 +50,14 @@ input[type="file"]::-webkit-file-upload-button {
   font-size: 18px;
   letter-spacing: 1px;
   text-decoration: none;
-  color: #183d3d;
-  background: transparent;
+  color: #f6e9b2;
+  background: #0a6847;
   cursor: pointer;
   transition: ease-out 0.5s;
-  border: 2px solid #183d3d;
-  border-radius: 10px;
-  box-shadow: inset 0 0 0 0 #183d3d;
+  border: 2px solid #0a6847;
+  border-radius: 3em;
+
+  box-shadow: inset 0 0 0 0 #0a6847;
 }
 
 input[type="file"]::-webkit-file-upload-button:active {
@@ -63,68 +65,53 @@ input[type="file"]::-webkit-file-upload-button:active {
 }
 
 input[type="file"]::-webkit-file-upload-button:hover {
-  color: white;
-  box-shadow: inset 0 -100px 0 0 #183d3d;
+  color: #0a6847;
+  box-shadow: inset 0 -100px 0 0 #f6e9b2;
 }
 .buttoncontainer {
   display: flex;
   justify-content: center;
   margin-top: 40px;
 }
-.button {
-  font-family: "newFont";
-  padding: 15px 20px;
-  font-size: 16px;
-  background: transparent;
+.btn {
   border: none;
-  position: relative;
-  color: #f0f0f0;
-  z-index: 1;
+  width: 15em;
+  height: 5em;
+  border-radius: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: #0a6847;
+  cursor: pointer;
+  transition: all 450ms ease-in-out;
 }
 
-.button::after,
-.button::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: -99999;
-  transition: all 0.4s;
+.sparkle {
+  fill: #aaaaaa;
+  transition: all 800ms ease;
 }
 
-.button::before {
-  transform: translate(0%, 0%);
-  width: 100%;
-  height: 100%;
-  background: #183d3d;
-  border-radius: 10px;
+.text {
+  font-weight: 600;
+  color: #aaaaaa;
+  font-size: medium;
 }
 
-.button::after {
-  transform: translate(10px, 10px);
-  width: 35px;
-  height: 35px;
-  background: #ffffff15;
-  backdrop-filter: blur(5px);
-  border-radius: 50px;
+.btn:hover {
+  background: linear-gradient(0deg, #7aba78, #eecd3a);
+  box-shadow: inset 0px 1px 0px 0px #0a6847, inset 0px -4px 0px 0px #0a6847,
+    0px 0px 0px 4px rgba(255, 255, 255, 0.2), 0px 0px 180px 0px #c2ff89;
+  transform: translateY(-2px);
 }
 
-.button:hover::before {
-  transform: translate(5%, 20%);
-  width: 110%;
-  height: 110%;
+.btn:hover .text {
+  color: white;
 }
 
-.button:hover::after {
-  border-radius: 10px;
-  transform: translate(0, 0);
-  width: 100%;
-  height: 100%;
-}
-
-.button:active::after {
-  transition: 0s;
-  transform: translate(0, 5%);
+.btn:hover .sparkle {
+  fill: white;
+  transform: scale(1.2);
 }
 label {
   margin-left: 20px;
@@ -135,17 +122,18 @@ label {
   max-width: 190px;
   padding: 0.875rem;
   font-size: 1rem;
-  border: 1.5px solid #183d3d;
+  border: 1.5px solid #0a6847;
   border-radius: 0.5rem;
-  box-shadow: 2.5px 3px 0 #183d3d;
+  box-shadow: 2.5px 3px 0 #0a6847;
   outline: none;
   transition: ease 0.25s;
   font-family: "newFont";
-  color: #183d3d;
+  color: #0a6847;
   font-size: larger;
+  background-color: #f6e9b2;
 }
 #prompt:focus {
-  box-shadow: 5.5px 7px 0 #183d3d;
+  box-shadow: 5.5px 7px 0 #0a6847;
 }
 .loader {
   display: none;
@@ -157,7 +145,7 @@ label {
 .box1,
 .box2,
 .box3 {
-  border: 16px solid #183d3d;
+  border: 16px solid #0a6847;
   box-sizing: border-box;
   position: absolute;
   display: block;
