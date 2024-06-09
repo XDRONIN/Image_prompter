@@ -32,13 +32,16 @@ async function run() {
   const response = await result.response;
   const text = response.text();
   const newText = addLineBreaks(text);
+  hideLoader();
   resultText.innerHTML = `${newText}`;
 }
 const resultText = document.querySelector(".output");
 const fileInputEl = document.querySelector("input[type=file]");
 const genButton = document.querySelector("#butt");
 genButton.addEventListener("click", () => {
+  showLoader();
   run();
+  resultText.innerHTML = "";
 });
 
 const imgPreview = document.getElementById("imagePreview");
@@ -69,4 +72,11 @@ function addLineBreaks(text) {
   });
 
   return formattedText;
+}
+const loader = document.querySelector(".loader");
+function showLoader() {
+  loader.style.display = "flex";
+}
+function hideLoader() {
+  loader.style.display = "none";
 }
